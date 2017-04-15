@@ -8,11 +8,12 @@
   },
   "scripts": {
     "build": "babel src --out-dir lib",
+    "build_lib": "babel src --out-dir lib",
     "prepublish": "npm run test && rimraf lib && npm run build",
     "test": "mocha --compilers js:babel-core/register --reporter spec --require ./test/helper.js test/*.js",
     "posttest": "npm run lint",
     "lint": "eslint src test",
-     "postinstall": "postinstall-build lib \"npm run build\""
+     "postinstall": "postinstall-build lib \"npm run build_lib\""
   },
   "repository": {
     "type": "git",
