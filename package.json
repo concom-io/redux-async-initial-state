@@ -11,7 +11,8 @@
     "prepublish": "npm run test && rimraf lib && npm run build",
     "test": "mocha --compilers js:babel-core/register --reporter spec --require ./test/helper.js test/*.js",
     "posttest": "npm run lint",
-    "lint": "eslint src test"
+    "lint": "eslint src test",
+     "postinstall": "postinstall-build lib \"npm run build\""
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,9 @@
   ],
   "author": "KELiON <kelionweb@gmail.com> (http://asubbotin.ru)",
   "license": "MIT",
+  "dependencies": {
+    "postinstall-build": "^2.0.0"
+  },
   "devDependencies": {
     "babel": "^6.5.2",
     "babel-cli": "^6.6.0",
